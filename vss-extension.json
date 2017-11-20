@@ -1,17 +1,15 @@
 {
     "manifestVersion": 1,
     "id": "tools",
-    "version": "0.1.0",
-    "name": "Fabrikam Tools",
-    "publisher": "fabrikam",
-    "description": "Awesome tools to help you and your team do great things everyday.",
-    "targets": [
-        {
-            "id": "Microsoft.VisualStudio.Services"
-        }
-    ],
+    "version": "0.1.1",
+    "name": "carmelo Tools",
+    "publisher": "carmelohuesca",
+    "description": "Most used Design Patterns with Typescript",
+    "targets": [{
+        "id": "Microsoft.VisualStudio.Services"
+    }],
     "icons": {
-        "default": "images/fabrikam-logo.png"
+        "default": "images/icon.png"
     },
     "scopes": [
         "vso.work",
@@ -30,7 +28,7 @@
             "path": "readme.md"
         },
         "license": {
-            "path": "eula.md"
+            "path": "readme.md"
         }
     },
     "links": {
@@ -43,27 +41,24 @@
     },
     "repository": {
         "type": "git",
-        "uri": "https://github.com/fabrikam-fiber-inc/myextension"
+        "uri": "https://github.com/carmelohuesca/patterns"
     },
-    "contributions": [
-        {
-            "id": "showCommits",
-            "type": "ms.vss-web.action",
-            "description": "Adds a menu action from builds grid to show associated items.",
-            "targets": [
-                "ms.vss-build-web.completed-build-menu"
-            ],
-            "properties": {
-                "title": "View associated items",
-                "uri": "launch.html"
-            }
+    "contributions": [{
+        "id": "showCommits",
+        "type": "ms.vss-web.action",
+        "description": "Adds a menu action from builds grid to show associated items.",
+        "targets": [
+            "ms.vss-build-web.completed-build-menu"
+        ],
+        "properties": {
+            "title": "View associated items",
+            "uri": "launch.html"
         }
-    ],
-    "files": [
-        {
+    }],
+    "files": [{
             "path": "launch.html",
             "addressable": true
-        },        
+        },
         {
             "path": "node_modules/vss-web-extension-sdk/lib",
             "addressable": true,
