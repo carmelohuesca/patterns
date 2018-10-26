@@ -110,7 +110,42 @@
             "instance.strategy.calculate(10,5);"
         ],
         "description": "Creates a Strategy Behaviour Pattern on Typescript"
+    },
+    "PubSub Pattern": {
+        "prefix": "PubSub",
+        "body": [
+            "interface SubscriptionInterface {",
+            "  name: string;",
+            "  fn: Function;",
+            "}",
+            "class Subscription implements SubscriptionInterface {",
+            "  name: string;",
+            "  fn: Function;",
+            "  constructor(name: string, fn: Function) {",
+            "    this.name = name;",
+            "    this.fn = fn;",
+            "  }",
+            "}",
+            "export class ${1:Subscriber} {",
+            "  listeners: Subscription[];",
+            "  constructor() {",
+            "    this.listeners = [];",
+            "  }",
+            "  subscribe(name: string, fn: Function) {",
+            "    this.listeners.push(new Subscription(name, fn));",
+            "  }",
+            "  unsubscribe(name: string) {",
+            "    const index = this.listeners.findIndex(subscription => subscription.name === name);",
+            "    this.listeners.splice(index, 1);",
+            "  }",
+            "  notify(_ev: string) {",
+            "    const args = Array.prototype.slice.call(arguments);",
+            "    const name = args.shift();",
+            "    this.listeners.forEach(subscription => subscription.name === name ? subscription.fn.apply(this, args) : '');",
+            "  }",
+            "}"
+        ],
+        "description": "Creates a PubSub Behaviour Pattern on Typescript"
     }
-
 
 }
