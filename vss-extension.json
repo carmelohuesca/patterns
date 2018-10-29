@@ -1,13 +1,25 @@
 {
     "manifestVersion": 1,
-    "id": "tools",
-    "version": "0.1.1",
-    "name": "carmelo Tools",
+    "id": "tstools",
+    "name": "tstools",
+    "version": "0.2.0",
     "publisher": "carmelohuesca",
     "description": "Most used Design Patterns with Typescript",
+    "displayName": "Design Patterns in Typescript",
+    "main": "./out/extension",
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+    },
+    "engines": {
+        "vscode": "^1.0.0"
+    },
     "targets": [{
         "id": "Microsoft.VisualStudio.Services"
     }],
+    "keywords": [
+        "typescript", "design", "patterns", "snippets", "factory", "singleton", "strategy", "memento", "state", "prototype"
+    ],
     "icons": {
         "default": "images/icon.png"
     },
@@ -17,7 +29,7 @@
         "vso.build_execute"
     ],
     "categories": [
-        "Plan and track"
+        "Snippets"
     ],
     "branding": {
         "color": "rgb(34, 34, 34)",
@@ -31,6 +43,9 @@
             "path": "readme.md"
         }
     },
+    "activationEvents": [
+        "onLanguage:typescript"
+    ],
     "links": {
         "getstarted": {
             "uri": "https://www.fabrikam-fiber-inc.com/help/getstarted"
